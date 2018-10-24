@@ -5,13 +5,10 @@ const icoX = document.querySelector(".fa-times");
 const aside = document.querySelector("aside");
 
 burger.addEventListener("click", () => {
-  console.log("ok");
   icoBurger.classList.toggle("show");
   aside.classList.toggle("show");
   icoX.classList.toggle("show");
-  icoArrow.classList.toggle("show");
 
-  Arrow.classList.toggle("active");
   burger.classList.toggle("active");
 });
 
@@ -20,6 +17,7 @@ const heightFromTop = document.querySelector(".about").offsetTop;
 window.onscroll = () => {
   scrollFunction();
 };
+
 function scrollFunction() {
   if (
     document.body.scrollTop >= heightFromTop ||
@@ -30,7 +28,12 @@ function scrollFunction() {
     document.getElementById("myBtn").style.display = "none";
   }
 }
+
 function goTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+const offMenu = document.querySelector("ul");
+offMenu.addEventListener("click", () => {
+  console.log("ul");
+});

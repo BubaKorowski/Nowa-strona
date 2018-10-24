@@ -1,3 +1,5 @@
+/* zrobić formulaż kontaktowy w CSS */
+/* ogarnąć smoothscroll i classList.Toggle na przyciskach menu żeby znikało */
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +7,18 @@
 }
 body {
   font-family: arial;
+  scroll-behavior: smooth;
 }
+
 /* Nav section */
+
+aside {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  transition: 0.4s;
+}
 .burger {
   position: fixed;
   top: 10px;
@@ -16,16 +28,71 @@ body {
   transition: 0.4s;
   cursor: pointer;
 }
-aside {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  transition: 0.4s;
-}
 aside.show {
   left: 0;
-  /* animation: navSlide 2s linear both; */
+}
+.arrow {
+  position: fixed;
+  font-size: 40px;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+  transition: 0.4s;
+  z-index: 100;
+}
+.burger.active {
+  transform: rotate(405deg);
+}
+.arrow.active {
+  transform: rotate(360deg);
+}
+.fas {
+  display: none;
+}
+i.show {
+  display: block;
+}
+
+nav {
+  background-color: red;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */
+}
+ul {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-content: space-around;
+  margin: 0 50px 0 0;
+  line-height: 50px;
+}
+ul li {
+  list-style: none;
+  flex-basis: 15%;
+}
+ul li a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+ul li a:hover {
+  background-color: darkred;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+  background-color: red;
+  font-size: 20px;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
 }
 
 /* Header */
@@ -36,6 +103,7 @@ header.home {
   background-image: url(/Moje_storny/Projekt_pierwszy/img/5.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 header.home p {
   color: white;
@@ -89,46 +157,6 @@ header.home p {
   }
 }
 
-.burger.active {
-  transform: rotate(405deg);
-}
-.fas {
-  display: none;
-}
-i.show {
-  display: block;
-}
-
-nav {
-  background-color: red;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%; */
-}
-ul {
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
-  align-content: space-around;
-  margin: 0 50px 0 0;
-  line-height: 50px;
-}
-ul li {
-  list-style: none;
-  flex-basis: 20%;
-}
-ul li a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-}
-ul li a:hover {
-  background-color: darkred;
-}
-
 /* Container */
 .page-container {
   /* padding: 0 50px; */
@@ -148,7 +176,7 @@ section.gallery {
   flex-direction: column;
 }
 section.gallery h1 {
-  background-color: black;
+  background-color: darkorange;
   color: white;
   text-align: center;
   line-height: 20vh;

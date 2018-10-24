@@ -101,8 +101,9 @@ header.home {
   height: 100vh;
   /* background-color: gray; */
   background-image: url(/Moje_storny/Projekt_pierwszy/img/5.jpg);
+  background-position: center bottom;
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  position: relative;
   background-size: cover;
 }
 header.home p {

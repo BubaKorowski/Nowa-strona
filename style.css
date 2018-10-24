@@ -113,9 +113,14 @@ ul li a:hover {
 header.home {
   height: 100vh;
   /* background-color: gray; */
+<<<<<<< HEAD
   background-image: url(/img/5.jpg);
+=======
+  background-image: url(/Moje_storny/Projekt_pierwszy/img/5.jpg);
+  background-position: center bottom;
+>>>>>>> 9c1ae5d219b41e5ee0fa93e490635b474e8aa829
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  position: relative;
   background-size: cover;
 }
 
